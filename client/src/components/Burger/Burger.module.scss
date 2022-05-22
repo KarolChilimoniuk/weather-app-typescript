@@ -1,0 +1,63 @@
+.defaultBurger {
+    border-bottom-color: #000;
+    border-bottom-style: solid;
+    border-bottom-width: 5px;
+    cursor: pointer;
+    height: 30px;
+    left: 40px;
+    width: 35px;
+    position: absolute;
+    top: 40px;   
+    z-index: 2;
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+}  
+
+.defaultBurger::before, .defaultBurger::after {
+    border-bottom: solid #000 5px;
+    content: "";
+    position: absolute;
+    width: 100%;
+}
+
+.defaultBurger::before {
+    top: 0;
+}
+
+.defaultBurger::after {
+    top: 50%;
+}    
+
+.xBurger { 
+   cursor: pointer;
+   height: 30px;
+   left: 40px;
+   width: 35px;
+   position: fixed;
+   top: 40px;   
+   z-index: 2;
+
+   @media (min-width: 1024px) {
+      display: none;
+    }
+}
+
+.xBurger::before, .xBurger::after {
+    border-top: solid 5px #000;
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    transition: transform 0.2s 0.1s;
+    width: 100%;    
+}
+
+.xBurger::before {
+    transform: rotateZ(-45deg);
+}
+
+.xBurger::after {
+    transform: rotateZ(45deg);
+}

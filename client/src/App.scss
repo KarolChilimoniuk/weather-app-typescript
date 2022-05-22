@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2:wght@400;600;700;800&display=swap');
+
+$primary-color: rgba(83,89,147, 0.9);
+$secondary-color: rgba(255,255,255, 0.9);
+$third-color: rgba(0,0,0,0.7);
+
+.App {
+  align-items: center;
+  background: url(/img/fuji.jpg) no-repeat center;
+  background-size: cover;
+  display: flex;
+  font-family: 'Baloo Tammudu 2', cursive;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+}
+
+:export {
+  primary-color: $primary-color;
+  secondary-color: $secondary-color;
+  third-color: $third-color;
+}
+
+

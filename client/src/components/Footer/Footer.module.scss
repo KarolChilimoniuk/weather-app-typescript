@@ -1,0 +1,14 @@
+@import '../../App.scss';
+
+.footer {
+    background-color: $secondary-color;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    height: 100px;
+    justify-content: center;
+    margin-top: 20px;
+    text-align: center;
+    width: 100vw;
+}

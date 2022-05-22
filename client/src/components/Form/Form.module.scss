@@ -1,0 +1,47 @@
+@import '../../App.scss';
+
+.form {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+
+    .labelInputContainer {
+      padding-left: 10px;
+      text-align: center;
+      width: 100%;
+
+      @media(min-width: 1024px) {
+        flex-direction: row;
+        padding-left: 0;
+        width: 350px;
+      }
+    }
+
+    .formInput {
+      background-color: $third-color;
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      height: 30px;
+      margin: 10px;
+      width: 30%;
+
+      @media(min-width: 1024px) {
+        width: 200px;
+      }
+    }
+
+    .formInput::placeholder {
+      color: #fff;
+    }
+
+    #submit {
+      cursor: pointer;
+    }
+
+  @media(min-width: 1024px) {
+    flex-direction: row;
+  }
+}

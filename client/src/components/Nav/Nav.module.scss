@@ -1,0 +1,136 @@
+@import '../../App.scss';
+
+.navContainer {
+  height: 10vh;
+  margin-bottom: 10px;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+  
+  .desktopNavigation {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+  
+    .background {
+      background-color: $secondary-color;
+      clip-path: polygon(68% 0, 96% 25%, 58% 100%, 0 100%, 0 0);
+      left: 0;
+      opacity: 0.8;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+
+      @media (min-width: 1024px) {
+        clip-path: none;
+        height: 100%;
+      }
+    }
+
+    .navigationList {
+      align-content: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      list-style: none;
+
+      @media (min-width: 1024px) {
+        align-content: center;
+        flex-direction: row;
+        justify-content: start;
+      }
+
+      .navigationElement {
+        display: flex;
+        justify-content: start;
+        margin-right: 20px;
+        z-index: 1;
+
+        @media (min-width: 1024px) {
+          align-content: center;
+          justify-content: center;
+      }
+
+      .navigationLink {
+        color: #000;
+        margin: 10px;
+        text-decoration: none;
+        transition: font-size 0.2s 0.1s;
+      }
+
+      .navigationLink:hover {
+        font-size: 1.2em;
+      }
+    }
+  }
+
+    @media (min-width: 1024px) {
+      width: 100%;
+    }
+
+    @media (max-width: 1023px) {
+      display: none;
+    }
+  }
+
+  .mobileNavigation {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    left: -200%;
+    position: fixed; 
+    transition: left 0.4s ease-out 0.1s;
+    width: 50%;
+
+    .background {
+      background-color: $secondary-color;
+      clip-path: polygon(68% 0, 96% 25%, 58% 100%, 0 100%, 0 0);
+      height: 100%;
+      left: 0;
+      opacity: 0.8;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+    }
+
+    .navigationList {
+      align-content: center;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      list-style: none;
+
+      .navigationElement {
+        display: flex;
+        justify-content: start;
+        margin-right: 20px;
+        z-index: 1;
+
+        .navigationLink {
+          color: #000;
+          margin-top: 10px;
+          text-decoration: none;
+        }
+      }
+    }
+
+    @media (min-width: 1024px) {
+      display: none;
+    }
+
+    @media (max-width: 1023px) {
+      display: flex;
+    }
+  }
+
+  .visible {
+    left: 0;
+  }
+}

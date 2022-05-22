@@ -1,0 +1,57 @@
+@import '../../App.scss';
+
+.forecastContainer {
+   align-items: center;
+   border-radius: 10px;
+   display: flex;
+   flex-direction: column;
+   flex-grow: 1;
+   flex-wrap: wrap;
+   width: 100%;
+
+   .error {
+      font-size: 1.5em;
+      text-align: center;
+      width: 100%;
+   }
+
+   .currentWeatherContainer {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      min-width: 320px;
+      width: 90%;
+
+      .todayWeather {
+         background-color: $primary-color;
+         border-radius: 10px;
+         padding: 40px;
+         width: 70%;
+
+         .icon {
+            width: 80px;
+         }
+         
+         .paragraph {
+           width: 70%;
+
+            .span {
+               color: rgb(255,255,255);
+               font-weight: 600;
+               text-transform: capitalize;
+            }
+         }
+      }
+
+      @media(min-width: 1024px) {
+         width: 45%;
+      }
+   }
+
+   @media(min-width: 1024px) {
+     align-items: start;
+     flex-direction: row;
+     flex-wrap: wrap;
+   }
+}
