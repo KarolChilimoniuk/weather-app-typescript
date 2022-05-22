@@ -1,9 +1,10 @@
 ***
 ### Introduction ⏩
-Hello World! This is my weather app built with React library. Project contains client side and server side. I used create-react-app, axios, react-router-dom and propTypes in client side. For server side I used express, cors, dotenv and node-fetch. Deployment had been done with heroku (for backend side) and netlify (for client side).
+Hello World! This is my weather app built with React library + Typescript. Project contains client side and server side. I used create-react-app, axios, react-router-dom in client side. For server side I used express, cors, dotenv and node-fetch. Deployment had been done with heroku (for backend side) and netlify (for client side).
 ***
 ### Technologies and Tools 🏗
 * create-react-app 
+* Typescript
 * react-router-dom
 * propTypes 
 * axios
