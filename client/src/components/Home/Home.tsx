@@ -11,7 +11,7 @@ const Home = () => {
   const [userPositionWeather, newUserPositionWeather] = useState<any>(
     ""
   );
-  const [forecastInfo, newForecastInfo] = useState<object | string>("");
+  const [forecastInfo, newForecastInfo] = useState<object | null>(null);
   const [isLoading, setLoading] = useState<boolean>(true);
 
   const fetchAppData = async (): Promise<void> => {
@@ -128,7 +128,7 @@ const Home = () => {
                 </p>
               </div>
             </div>
-            {forecastInfo !== "" && (
+            {forecastInfo !== null && (
               <DailyForecast forecastInfo={forecastInfo} />
             )}
           </>

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const url = `http://localhost:4000/weather/`; 
+const url = `https://gentle-cliffs-74646.herokuapp.com/weather/`; 
 
 // User location weather & forecast data
 

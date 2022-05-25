@@ -1,21 +1,18 @@
 {
-    "compilerOptions": {
-        "lib": ["es6", "esnext"],
-        "moduleResolution": "node",
-        "module": "commonjs",
-        "target": "es6",
-        "allowJs": true,
-        "noImplicitAny": true,
-        // "moduleResolution": "nodenext",
-        "esModuleInterop": true,
-        "sourceMap": true,
-        "outDir": "dist",
-        "baseUrl": ".",
-        "paths": {
-            "*":[
-               "node_modules/*"
-            ]
-        }
-    },
-    "include": ["*"]
+  "compilerOptions": {
+    "lib": ["es6", "esnext"],
+    "moduleResolution": "node",
+    "module": "commonjs",
+    "target": "es6",
+    "allowJs": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["node_modules/*"]
+    }
+  },
+  "include": ["*"]
 }

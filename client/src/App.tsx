@@ -27,10 +27,14 @@ const App = (): JSX.Element => {
   };
 
   useEffect(() => {
-    window.navigator.geolocation.getCurrentPosition(
-      successCallback,
-      failureCallback
-    );
+    if("geolocation" in navigator) {
+      window.navigator.geolocation.getCurrentPosition(
+        successCallback,
+        failureCallback
+      );
+    } else {
+      alert("Geolocation is not available");
+    }
   }, []);
 
   return (
