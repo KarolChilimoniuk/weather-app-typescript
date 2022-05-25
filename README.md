@@ -6,7 +6,6 @@ Hello World! This is my weather app built with React library + Typescript. Proje
 * create-react-app 
 * Typescript
 * react-router-dom
-* propTypes 
 * axios
 * express
 * cors
