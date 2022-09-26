@@ -1,33 +1,29 @@
-import React, { useState, useEffect, createContext } from "react";
+import { useState, useEffect, createContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home/Home";
 import RequiredWeather from "./components/RequiredWeather/RequiredWeather";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
+import { IUserPosition } from "./services/interfaces/interfaces";
 import "./App.scss";
 
-export type UserPosition = {
-  latitude: string;
-  longitude: string;
-}
-
-export const PositionContext = createContext<UserPosition | number>(0);
+export const PositionContext = createContext<IUserPosition>(null);
 
 const App = (): JSX.Element => {
-  const [userPosition, newUserPosition] = useState<UserPosition | number>(0);
+  const [userPosition, newUserPosition] = useState<IUserPosition>(null);
 
-  const successCallback = (userPos:any) => {
+  const successCallback = (userPos: any): void => {
     newUserPosition(userPos.coords);
     console.log("I've got your localization data :]");
   };
 
-  const failureCallback = () => {
-    newUserPosition(0);
+  const failureCallback = (): void => {
+    newUserPosition(null);
     console.log("I can't get your localization data :(");
   };
 
-  useEffect(() => {
-    if("geolocation" in navigator) {
+  useEffect((): void => {
+    if ("geolocation" in navigator) {
       window.navigator.geolocation.getCurrentPosition(
         successCallback,
         failureCallback

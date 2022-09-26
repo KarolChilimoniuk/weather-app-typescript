@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import moment from "moment";
+import { INextWeekForecast } from "../../services/interfaces/interfaces";
 import styles from "./DailyForecast.module.scss";
 
 const DailyForecast = ({ forecastInfo }: any): JSX.Element => {
-  const [nextWeek, setNextWeek] = useState<any>(null);
+  const [nextWeek, setNextWeek] = useState<INextWeekForecast>(null);
 
-  useEffect(() => {
+  useEffect((): void => {
     console.log(forecastInfo.daily);
     const next7Days = forecastInfo.daily.filter((day) =>
       moment(day.dt * 1000).format("MMMM Do YYYY") !==

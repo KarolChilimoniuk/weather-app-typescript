@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import moment from "moment";
+import { INextWeekForecast } from "../../services/interfaces/interfaces";
 import Form from "../Form/Form";
 import DailyForecast from "../DailyForecast/DailyForecast";
 import { getReqCityData } from "../../apiHandling/apiHandling";
@@ -9,7 +10,7 @@ import styles from "./RequiredWeather.module.scss";
 const RequiredWeather = (): JSX.Element => {
   const [cityName, newCityName] = useState<string>("");
   const [cityInfo, newCityInfo] = useState<any>("");
-  const [forecastInfo, newForecastInfo] = useState<any>("");
+  const [forecastInfo, newForecastInfo] = useState<INextWeekForecast>(null);
 
   const fetchAppData = async (): Promise<void> => {
     if (cityName !== "") {
@@ -111,7 +112,7 @@ const RequiredWeather = (): JSX.Element => {
                 </p>
               </div>
             </div>
-            {forecastInfo !== "" && (
+            {forecastInfo !== null && (
               <DailyForecast forecastInfo={forecastInfo} />
             )}
           </>
