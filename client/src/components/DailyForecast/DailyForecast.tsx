@@ -34,6 +34,7 @@ const DailyForecast = ({ forecastInfo }: any): JSX.Element => {
                 <img
                   className={styles.icon}
                   src={`http://openweathermap.org/img/wn/${el.weather[0].icon}@2x.png`}
+                  alt={`weather icon`}
                 />
                 <p className={styles.paragraph}>
                   Weather:{" "}

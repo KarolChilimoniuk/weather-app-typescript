@@ -1,11 +1,11 @@
 import axios from "axios";
 
-// const url = `https://gentle-cliffs-74646.herokuapp.com/weather/`;
-const url = `http://localhost:4000/weather/`;
+// const url:string = `https://gentle-cliffs-74646.herokuapp.com/weather/`;
+const url: string = `http://localhost:4000/weather/`;
 
 // User location weather & forecast data
 
-export const getLocWeatherData = async (lat, lon) => {
+export const getLocWeatherData = async (lat: number, lon: number) => {
   let weatherData = null;
   await axios
     .post(url, { lat: lat, lon: lon })
@@ -18,7 +18,7 @@ export const getLocWeatherData = async (lat, lon) => {
 
 // Required city weather & forecast data
 
-export const getReqCityData = async (cityName) => {
+export const getReqCityData = async (cityName: string) => {
   let weatherData = null;
   await axios
     .post(`${url}reqWeather`, { cityName: cityName })
