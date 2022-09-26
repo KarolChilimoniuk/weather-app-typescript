@@ -14,5 +14,5 @@
       "*": ["node_modules/*"]
     }
   },
-  "include": ["*"]
+  "include": ["*", "services/interfaces"]
 }
