@@ -1,22 +1,28 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import moment from "moment";
 import styles from "./DailyForecast.module.scss";
 
 const DailyForecast = ({ forecastInfo }: any): JSX.Element => {
-
   const [nextWeek, setNextWeek] = useState<any>(null);
 
   useEffect(() => {
     console.log(forecastInfo.daily);
-    const next7Days = forecastInfo.daily.filter(day => moment(day.dt * 1000).format("MMMM Do YYYY") !== moment().format("MMM Do YYYY") ? day : null);
+    const next7Days = forecastInfo.daily.filter((day) =>
+      moment(day.dt * 1000).format("MMMM Do YYYY") !==
+      moment().format("MMM Do YYYY")
+        ? day
+        : null
+    );
     setNextWeek(next7Days);
-  }, [forecastInfo])
+  }, [forecastInfo]);
 
   return (
     <section className={styles.dailyForecastContainer}>
-      <h2 className={styles.header}>7 days forecast</h2>
+      <h2 className={styles.header}>8 days forecast</h2>
       <div className={styles.weekDailyForecast}>
-        {forecastInfo !== undefined && forecastInfo !== null && nextWeek !== null
+        {forecastInfo !== undefined &&
+        forecastInfo !== null &&
+        nextWeek !== null
           ? nextWeek.map((el, i, arr) => (
               <div className={styles.dayForecast}>
                 <h3 className={styles.secondHeader}>
