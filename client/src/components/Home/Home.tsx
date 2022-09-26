@@ -2,25 +2,23 @@ import React, { useEffect, useState, useContext } from "react";
 import moment from "moment";
 import { PositionContext, UserPosition } from "../../App";
 import DailyForecast from "../DailyForecast/DailyForecast";
-import { getLocWeatherData } from "../../apiHandling/apiHandling.js";
+import { getLocWeatherData } from "../../apiHandling/apiHandling";
 import { Helmet } from "react-helmet-async";
 import styles from "./Home.module.scss";
 
-const Home = () => {
+const Home = (): JSX.Element => {
   const userPosition: number | UserPosition = useContext(PositionContext);
-  const [userPositionWeather, newUserPositionWeather] = useState<any>(
-    ""
-  );
+  const [userPositionWeather, newUserPositionWeather] = useState<any>("");
   const [forecastInfo, newForecastInfo] = useState<object | null>(null);
   const [isLoading, setLoading] = useState<boolean>(true);
 
   const fetchAppData = async (): Promise<void> => {
-    if(typeof userPosition !== "number") {
+    if (typeof userPosition !== "number") {
       const localWeatherData = await getLocWeatherData(
         userPosition.latitude,
         userPosition.longitude
       );
-      if(localWeatherData !== null) {
+      if (localWeatherData !== null) {
         newUserPositionWeather(localWeatherData.currentWeather);
         newForecastInfo(localWeatherData.forecastData);
         setLoading(false);

@@ -1,17 +1,17 @@
-import React, { useState, useEffect, useContext } from "react";
-import moment from 'moment';
+import React, { useState, useEffect } from "react";
+import moment from "moment";
 import Form from "../Form/Form";
 import DailyForecast from "../DailyForecast/DailyForecast";
 import { getReqCityData } from "../../apiHandling/apiHandling";
 import { Helmet } from "react-helmet-async";
 import styles from "./RequiredWeather.module.scss";
 
-const RequiredWeather = ():JSX.Element => {
+const RequiredWeather = (): JSX.Element => {
   const [cityName, newCityName] = useState<string>("");
   const [cityInfo, newCityInfo] = useState<any>("");
   const [forecastInfo, newForecastInfo] = useState<any>("");
 
-  const fetchAppData = async ():Promise<void> => {
+  const fetchAppData = async (): Promise<void> => {
     if (cityName !== "") {
       const weatherData = await getReqCityData(cityName);
       if (!weatherData.message && weatherData !== null) {
@@ -23,7 +23,7 @@ const RequiredWeather = ():JSX.Element => {
     }
   };
 
-  useEffect(():void => {
+  useEffect((): void => {
     if (cityName !== "") {
       fetchAppData();
     }
@@ -51,9 +51,12 @@ const RequiredWeather = ():JSX.Element => {
               <h2 className={styles.header}>Current weather</h2>
               <div className={styles.todayWeather}>
                 <h3 className={styles.paragraph}>{cityInfo.name}</h3>
-                <p className={styles.paragraph}>Day:{" "}
+                <p className={styles.paragraph}>
+                  Day:{" "}
                   <span className={styles.span}>
-                  {moment().format('dddd')}{", "}{moment().format('MMMM Do YYYY')}
+                    {moment().format("dddd")}
+                    {", "}
+                    {moment().format("MMMM Do YYYY")}
                   </span>
                 </p>
                 <img
@@ -66,14 +69,16 @@ const RequiredWeather = ():JSX.Element => {
                     {cityInfo.weather[0].description}
                   </span>
                 </p>
-                <p className={styles.paragraph}>Sunrise:{" "}
+                <p className={styles.paragraph}>
+                  Sunrise:{" "}
                   <span className={styles.span}>
-                     {moment(cityInfo.sys.sunrise * 1000).calendar()}
+                    {moment(cityInfo.sys.sunrise * 1000).calendar()}
                   </span>
                 </p>
-                <p className={styles.paragraph}>Sunset:{" "}
+                <p className={styles.paragraph}>
+                  Sunset:{" "}
                   <span className={styles.span}>
-                     {moment(cityInfo.sys.sunset * 1000).calendar()}
+                    {moment(cityInfo.sys.sunset * 1000).calendar()}
                   </span>
                 </p>
                 <p className={styles.paragraph}>
