@@ -1,3 +1,5 @@
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
+
 module.exports = {
   // The root of your source code, typically /src
   // `<rootDir>` is a token Jest substitutes
@@ -24,4 +26,6 @@ module.exports = {
 
   // Module file extensions for importing
   moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
+  preset: "ts-jest",
+  testEnvironment: "node",
 };
