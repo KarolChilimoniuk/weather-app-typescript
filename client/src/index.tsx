@@ -3,18 +3,15 @@ import { createRoot } from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import "./index.css";
 import App from "./App";
-import { HelmetProvider } from "react-helmet-async";
 import reportWebVitals from "./reportWebVitals";
 
 const container = document.getElementById("root");
 
 createRoot(container).render(
   <React.StrictMode>
-    <HelmetProvider>
-      <Router>
-        <App />
-      </Router>
-    </HelmetProvider>
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>
 );
 

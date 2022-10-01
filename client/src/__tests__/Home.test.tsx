@@ -5,7 +5,7 @@ import RequiredWeather from "../components/RequiredWeather/RequiredWeather";
 
 describe("Home layout tests", () => {
   test("Rendering", async () => {
-    const ho = render(<RequiredWeather />);
-    ho && console.debug(ho);
+    const component = render(<RequiredWeather />);
+    expect(component).component && console.debug(component);
   });
 });

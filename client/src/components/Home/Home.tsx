@@ -8,7 +8,6 @@ import {
   IForecast,
 } from "../../services/interfaces/interfaces";
 import { getLocWeatherData } from "../../apiHandling/apiHandling";
-import { Helmet } from "react-helmet-async";
 import styles from "./Home.module.scss";
 
 const Home = (): JSX.Element => {
@@ -40,14 +39,6 @@ const Home = (): JSX.Element => {
 
   return (
     <>
-      <Helmet>
-        <title>Weather app by Karol Chilimoniuk</title>
-        <meta
-          name="description"
-          content="Weather app coded by Karol Chilimoniuk with React and other technologies"
-        />
-        <link rel="canonical" href="/" />
-      </Helmet>
       <section className={styles.container}>
         {isLoading && <h3 className={styles.loading}>... Loading</h3>}
         {isLoading === false && (

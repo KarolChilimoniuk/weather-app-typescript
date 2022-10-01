@@ -4,7 +4,6 @@ import { INextWeekForecast } from "../../services/interfaces/interfaces";
 import Form from "../Form/Form";
 import DailyForecast from "../DailyForecast/DailyForecast";
 import { getReqCityData } from "../../apiHandling/apiHandling";
-import { Helmet } from "react-helmet-async";
 import styles from "./RequiredWeather.module.scss";
 
 const RequiredWeather = (): JSX.Element => {
@@ -32,14 +31,6 @@ const RequiredWeather = (): JSX.Element => {
 
   return (
     <>
-      <Helmet>
-        <title>Weather app by Karol Chilimoniuk</title>
-        <meta
-          name="description"
-          content="Weather app coded by Karol Chilimoniuk with React and other technologies"
-        />
-        <link rel="canonical" href="/requiredForecast" />
-      </Helmet>
       <section className={styles.forecastContainer}>
         <Form appMethod={newCityName} cityName={cityName} />
         {cityInfo === "" && <p className={styles.error}>Write a city</p>}
