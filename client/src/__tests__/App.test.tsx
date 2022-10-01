@@ -9,6 +9,5 @@ describe("Main container test", () => {
         <App />
       </BrowserRouter>
     );
-    console.debug(component);
   });
 });
