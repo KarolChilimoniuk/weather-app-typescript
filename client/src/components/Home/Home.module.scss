@@ -1,76 +1,70 @@
-
 .container {
-   align-items: center;
-   border-radius: 10px;
-   display: flex;
-   flex-direction: column;
-   flex-grow: 1;
-   flex-wrap: wrap;
-   width: 100%;
+  align-items: center;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  width: 100vw;
 
-   .loading {
-      margin-left: 30px;
-      font-size: 1.5rem;
-   }
+  .loading {
+    margin-left: 30px;
+    font-size: 1.5rem;
+  }
 
-   .currentWeather {
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      min-width: 320px;
-      width: 90%;
+  .currentWeather {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    width: 90%;
 
-      .icon {
-         width: 80px;
+    .icon {
+      width: 80px;
+    }
+
+    .header {
+      display: inline-block;
+      text-align: center;
+      width: 100%;
+
+      @media (min-width: 1024px) {
+        margin-top: 20px;
+        max-height: 50px;
       }
+    }
 
-      .header {
-         display: inline-block;
-         text-align: center;
-         width: 100%;
+    .weatherDetails {
+      background-color: rgba(83, 89, 147, 0.9);
+      border-radius: 10px;
+      margin-bottom: 10px;
+      padding: 40px;
+      width: 70%;
 
-         @media(min-width: 1024px) {
-            margin-top: 20px;
-            max-height: 50px;
-         }
-      }
-
-      .weatherDetails {
-         background-color: rgba(83,89,147, 0.9);
-         border-radius: 10px;
-         margin-bottom: 10px;
-         padding: 40px;
-         width: 70%;
-
-         .paragraph {
-            .span {
-               color: rgb(255,255,255);
-               font-weight: 600;
-               text-transform: capitalize;
-            }
+      .paragraph {
+        .span {
+          color: rgb(255, 255, 255);
+          font-weight: 600;
+          text-transform: capitalize;
         }
-
-        @media(min-width: 1024px) {
-            min-width: 246px;
-            width: 45%;
-         }
       }
 
-      @media(min-width: 1024px) {
-         align-items: center;
-         flex-direction: column;
-         margin-top: 20px;
-         width: 40%
+      @media (min-width: 1024px) {
+        min-width: 246px;
+        width: 45%;
       }
-   }
-  @media(min-width: 1024px) {
-     align-items: start;
-     flex-direction: row;
-     flex-wrap: wrap;
+    }
+
+    @media (min-width: 1024px) {
+      align-items: center;
+      flex-direction: column;
+      margin-top: 20px;
+      width: 40%;
+    }
+  }
+  @media (min-width: 1024px) {
+    align-items: start;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
-
-   
-  
-    
-    
