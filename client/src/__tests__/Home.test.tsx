@@ -1,20 +1,11 @@
-import {
-  render,
-  fireEvent,
-  screen,
-  RenderResult,
-} from "@testing-library/react";
+import { render, RenderResult } from "@testing-library/react";
+import { getLocWeatherData } from "../apiHandling/apiHandling";
+import { IUserPosition, IWeatherInfo } from "../services/interfaces/interfaces";
 import Home from "../components/Home/Home";
-import RequiredWeather from "../components/RequiredWeather/RequiredWeather";
 import DailyForecast from "../components/DailyForecast/DailyForecast";
 
-interface ICoords {
-  latitude: number;
-  longitude: number;
-}
-
 interface IGeolocationData {
-  coords: ICoords;
+  coords: IUserPosition;
 }
 
 describe("Home layout tests", () => {
@@ -41,6 +32,7 @@ describe("Home layout tests", () => {
 
     navigator.geolocation.getCurrentPosition((userCoords) => {
       userGeolocationData = userCoords;
+
       () => {
         console.error("Can't get geolocation coords :(");
       };
@@ -52,12 +44,18 @@ describe("Home layout tests", () => {
   test("Home page loading element rendering", () => {
     const loadingElement: HTMLHeadingElement =
       document.querySelector(".loading");
-
-    console.debug(loadingElement);
     expect(loadingElement).toBeInTheDocument();
   });
-  // test("Render DailyForecast component inside Home page", async () => {
-  //   const dailyForecastComponent = render(<DailyForecast />);
-  //   dailyForecastComponent && console.debug(dailyForecastComponent);
-  // });
+  test("Render DailyForecast component inside Home page", async () => {
+    const localWeatherData: IWeatherInfo = await getLocWeatherData(
+      userGeolocationData.coords.latitude,
+      userGeolocationData.coords.longitude
+    );
+
+    const dailyForecastComponent = render(
+      <DailyForecast forecastInfo={localWeatherData.forecastData} />
+    );
+
+    dailyForecastComponent && console.debug(dailyForecastComponent);
+  });
 });

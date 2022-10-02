@@ -14,7 +14,7 @@ const DailyForecast = ({ forecastInfo }: any): JSX.Element => {
         ? day
         : null
     );
-    setNextWeek(next7Days);
+    setNextWeek({ nextWeekForecast: next7Days });
   }, [forecastInfo]);
 
   return (
@@ -24,7 +24,7 @@ const DailyForecast = ({ forecastInfo }: any): JSX.Element => {
         {forecastInfo !== undefined &&
         forecastInfo !== null &&
         nextWeek !== null
-          ? nextWeek.map((el, i, arr) => (
+          ? nextWeek.nextWeekForecast.map((el, i, arr) => (
               <div className={styles.dayForecast}>
                 <h3 className={styles.secondHeader}>
                   {moment(el.dt * 1000).format("dddd")}

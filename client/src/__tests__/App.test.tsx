@@ -11,6 +11,6 @@ describe("Main container test", () => {
     );
     component
       ? console.debug(component)
-      : console.error(`<App/> component can't be rendered`);
+      : console.error(`<App/> component can't be rendered.`);
   });
 });
