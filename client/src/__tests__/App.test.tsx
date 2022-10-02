@@ -9,5 +9,8 @@ describe("Main container test", () => {
         <App />
       </BrowserRouter>
     );
+    component
+      ? console.debug(component)
+      : console.error(`<App/> component can't be rendered`);
   });
 });

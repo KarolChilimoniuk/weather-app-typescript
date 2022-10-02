@@ -8,12 +8,22 @@ import Home from "../components/Home/Home";
 import RequiredWeather from "../components/RequiredWeather/RequiredWeather";
 import DailyForecast from "../components/DailyForecast/DailyForecast";
 
+interface ICoords {
+  latitude: number;
+  longitude: number;
+}
+
+interface IGeolocationData {
+  coords: ICoords;
+}
+
 describe("Home layout tests", () => {
   let homePage: RenderResult;
-  let userGeolocationData: any = null;
+  let userGeolocationData: IGeolocationData = null;
 
   beforeEach(() => {
     homePage = render(<Home />);
+
     const mockGeolocation = {
       getCurrentPosition: jest.fn().mockImplementation((success) =>
         Promise.resolve(
@@ -28,13 +38,15 @@ describe("Home layout tests", () => {
     };
     // @ts-ignore
     navigator.geolocation = mockGeolocation;
+
     navigator.geolocation.getCurrentPosition((userCoords) => {
       userGeolocationData = userCoords;
       () => {
-        console.log("Can't get user coords :(");
+        console.error("Can't get geolocation coords :(");
       };
     });
-    console.log(userGeolocationData.coords);
+
+    console.table(userGeolocationData);
   });
 
   test("Home page loading element rendering", () => {
@@ -42,7 +54,6 @@ describe("Home layout tests", () => {
       document.querySelector(".loading");
 
     console.debug(loadingElement);
-
     expect(loadingElement).toBeInTheDocument();
   });
   // test("Render DailyForecast component inside Home page", async () => {
