@@ -33,7 +33,11 @@ const RequiredWeather = (): JSX.Element => {
     <>
       <section className={styles.forecastContainer}>
         <Form appMethod={newCityName} cityName={cityName} />
-        {cityInfo === "" && <p className={styles.error}>Write a city</p>}
+        {cityInfo === "" && (
+          <p className={styles.error} data-testid="writeACityTest">
+            Write a city
+          </p>
+        )}
         {cityInfo.cod !== 200 ? (
           <p className={styles.error}>{cityInfo.message}</p>
         ) : null}

@@ -12,7 +12,7 @@ describe("Home layout tests", () => {
   let homePage: RenderResult;
   let userGeolocationData: IGeolocationData = null;
 
-  beforeEach(() => {
+  beforeAll(() => {
     homePage = render(<Home />);
 
     const mockGeolocation = {

@@ -1,5 +1,5 @@
-import { BrowserRouter, BrowserRouter as Router } from "react-router-dom";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { BrowserRouter } from "react-router-dom";
+import { render } from "@testing-library/react";
 import App from "../App";
 
 describe("Main container test", () => {
