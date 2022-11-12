@@ -3,7 +3,7 @@ export interface IUserPosition {
   longitude: number;
 }
 
-export type ICurrentWeather = {
+export interface ICurrentWeather {
   coord: { lon: string; lat: string };
   weather: Array<{
     id: number;
@@ -39,9 +39,9 @@ export type ICurrentWeather = {
   id: number;
   name: string;
   cod: number;
-};
+}
 
-export type IDayWeatherForecast = {
+export interface IDayWeatherForecast {
   dt: number;
   sunrise: number;
   sunset: number;
@@ -72,14 +72,12 @@ export type IDayWeatherForecast = {
   clouds: number;
   pop: number;
   uvi: number;
-};
+}
 
-export type IForecast = {
+export interface IForecast {
   lat: number;
   lon: number;
   timezone: string;
   timezone_offset: number;
   daily: Array<IDayWeatherForecast>;
-};
-
-export type INextWeekForecast = Array<IDayWeatherForecast>;
+}
