@@ -1,7 +1,8 @@
 import axios from "axios";
 
 // const url:string = `https://gentle-cliffs-74646.herokuapp.com/weather/`;
-const url: string = `http://localhost:4000/weather/`;
+const url: string = `https://weatherapp-backend-5xa9.onrender.com/weather/`;
+// const url: string = `http://localhost:4000/weather/`;
 
 // User location weather & forecast data
 

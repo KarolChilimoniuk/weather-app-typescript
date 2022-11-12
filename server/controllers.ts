@@ -1,5 +1,6 @@
 import { Request, Response } from "Express";
 import { ICurrentWeather, IForecast } from "./services/interfaces/interfaces";
+import { NextWeekForecast } from "./services/types/types";
 import {
   getCurrentLocWeather,
   getForecastLocWeather,
@@ -20,7 +21,7 @@ export const getRequiredWeatherData = async (req: Request, res: Response) => {
   const { cityName } = req.body;
   const currentWeather: ICurrentWeather = await getReqWeather(cityName);
   if (currentWeather) {
-    const weatherForecast = await getReqForecast(
+    const weatherForecast: NextWeekForecast = await getReqForecast(
       currentWeather.coord.lat,
       currentWeather.coord.lon
     );

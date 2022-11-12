@@ -14,5 +14,5 @@
       "*": ["node_modules/*"]
     }
   },
-  "include": ["*", "services/interfaces"]
+  "include": ["*", "services/interfaces", "services/types/types.ts"]
 }
