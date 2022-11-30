@@ -47,7 +47,6 @@ const Home = (): JSX.Element => {
               <h2 className={styles.header}>Your localization</h2>
               <div className={styles.weatherDetails}>
                 <p className={styles.paragraph}>
-                  You are in{" "}
                   <span className={styles.span}>
                     {userPositionWeather.name}
                   </span>
@@ -57,7 +56,6 @@ const Home = (): JSX.Element => {
                   </span>
                 </p>
                 <p className={styles.paragraph}>
-                  Day:{" "}
                   <span className={styles.span}>
                     {moment().format("dddd")}
                     {", "}
@@ -70,7 +68,7 @@ const Home = (): JSX.Element => {
                   alt={`weather icon`}
                 />
                 <p className={styles.paragraph}>
-                  Current weather is:{" "}
+                  Weather is:{" "}
                   <span className={styles.span}>
                     {userPositionWeather.weather[0].description}
                   </span>

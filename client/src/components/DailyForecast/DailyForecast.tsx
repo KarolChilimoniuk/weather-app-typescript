@@ -10,7 +10,7 @@ const DailyForecast = ({ forecastInfo }: any): JSX.Element => {
     console.log(forecastInfo.daily);
     const next7Days = forecastInfo.daily.filter((day) =>
       moment(day.dt * 1000).format("MMMM Do YYYY") !==
-      moment().format("MMM Do YYYY")
+      moment().format("MMMM Do YYYY")
         ? day
         : null
     );
@@ -19,7 +19,7 @@ const DailyForecast = ({ forecastInfo }: any): JSX.Element => {
 
   return (
     <section className={styles.dailyForecastContainer}>
-      <h2 className={styles.header}>8 days forecast</h2>
+      <h2 className={styles.header}>Next 7 days forecast</h2>
       <div className={styles.weekDailyForecast}>
         {forecastInfo !== undefined &&
         forecastInfo !== null &&
@@ -27,8 +27,9 @@ const DailyForecast = ({ forecastInfo }: any): JSX.Element => {
           ? nextWeek.nextWeekForecast.map((el, i, arr) => (
               <div className={styles.dayForecast}>
                 <h3 className={styles.secondHeader}>
-                  {moment(el.dt * 1000).format("dddd")}
-                  {", "}
+                  {moment(el.dt * 1000).format("dddd")},
+                </h3>
+                <h3 className={styles.secondHeader}>
                   {moment(el.dt * 1000).format("MMMM Do YYYY")}
                 </h3>
                 <img

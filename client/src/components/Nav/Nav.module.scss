@@ -1,19 +1,19 @@
-@import '../../App.scss';
+@import "../../App.scss";
 
 .navContainer {
   height: 10vh;
   margin-bottom: 10px;
   position: relative;
   width: 100%;
-  z-index: 2;
-  
+  z-index: 3;
+
   .desktopNavigation {
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: center;
     width: 100%;
-  
+
     .background {
       background-color: $secondary-color;
       clip-path: polygon(68% 0, 96% 25%, 58% 100%, 0 100%, 0 0);
@@ -53,20 +53,20 @@
         @media (min-width: 1024px) {
           align-content: center;
           justify-content: center;
-      }
+        }
 
-      .navigationLink {
-        color: #000;
-        margin: 10px;
-        text-decoration: none;
-        transition: font-size 0.2s 0.1s;
-      }
+        .navigationLink {
+          color: $sixth-color;
+          margin: 10px;
+          text-decoration: none;
+          transition: font-size 0.2s 0.1s;
+        }
 
-      .navigationLink:hover {
-        font-size: 1.2em;
+        .navigationLink:hover {
+          font-size: 1.2em;
+        }
       }
     }
-  }
 
     @media (min-width: 1024px) {
       width: 100%;
@@ -83,7 +83,7 @@
     height: 100vh;
     justify-content: center;
     left: -200%;
-    position: fixed; 
+    position: fixed;
     transition: left 0.4s ease-out 0.1s;
     width: 50%;
 

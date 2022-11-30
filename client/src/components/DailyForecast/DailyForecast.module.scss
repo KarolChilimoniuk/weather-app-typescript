@@ -4,10 +4,12 @@
   align-items: center;
   display: flex;
   flex-direction: column;
+  margin-right: 0;
   min-width: 311px;
-  width: 90%;
+  width: 100%;
 
   .header {
+    color: $fifth-color;
     text-align: center;
 
     @media (min-width: 1024px) {
@@ -26,16 +28,17 @@
     .dayForecast {
       background-color: $primary-color;
       border-radius: 10px;
+      min-height: 600px;
       margin-bottom: 10px;
       margin-left: 0;
       padding-bottom: 10px;
       padding-left: 30px;
       margin-right: 0;
-      padding-top: 10px;
+      padding-top: 20px;
       width: 75%;
 
       .secondHeader {
-        margin-bottom: 0;
+        margin: 0;
       }
 
       .icon {
@@ -48,6 +51,7 @@
         display: flex;
         flex-direction: column;
         flex-wrap: wrap;
+        min-height: 500px;
         margin-left: 5px;
         margin-right: 5px;
         margin-top: 20px;
@@ -57,7 +61,7 @@
 
     .paragraph {
       .span {
-        color: rgb(255, 255, 255);
+        color: $fifth-color;
         font-weight: 600;
         text-transform: capitalize;
       }

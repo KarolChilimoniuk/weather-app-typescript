@@ -48,7 +48,6 @@ const RequiredWeather = (): JSX.Element => {
               <div className={styles.todayWeather}>
                 <h3 className={styles.paragraph}>{cityInfo.name}</h3>
                 <p className={styles.paragraph}>
-                  Day:{" "}
                   <span className={styles.span}>
                     {moment().format("dddd")}
                     {", "}

@@ -17,7 +17,7 @@ const Form = ({ appMethod, cityName }: FormProps): JSX.Element => {
   return (
     <form onSubmit={submitHandler} className={styles.form}>
       <div className={styles.labelInputContainer}>
-        <label className={styles.formLabel}>Search weather:</label>
+        <label className={styles.formLabel}>Check weather in:</label>
         <input
           name="weather"
           type="text"
@@ -30,7 +30,7 @@ const Form = ({ appMethod, cityName }: FormProps): JSX.Element => {
       <input
         id={styles.submit}
         type="submit"
-        value="search"
+        value="check"
         className={styles.formInput}
       />
     </form>

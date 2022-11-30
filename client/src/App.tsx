@@ -36,6 +36,7 @@ const App = (): JSX.Element => {
   return (
     <PositionContext.Provider value={userPosition}>
       <div className="App">
+        <div className="background"></div>
         <Nav />
         <Routes>
           <Route path="/" element={<Home />} />

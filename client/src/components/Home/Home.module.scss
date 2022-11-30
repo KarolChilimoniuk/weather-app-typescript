@@ -1,3 +1,5 @@
+@import "../../App.scss";
+
 .container {
   align-items: center;
   border-radius: 10px;
@@ -6,6 +8,7 @@
   flex-grow: 1;
   flex-wrap: wrap;
   width: 100vw;
+  z-index: 2;
 
   .loading {
     margin-left: 30px;
@@ -17,13 +20,14 @@
     display: flex;
     flex-direction: column;
     min-width: 320px;
-    width: 90%;
+    width: 100%;
 
     .icon {
       width: 80px;
     }
 
     .header {
+      color: $fifth-color;
       display: inline-block;
       text-align: center;
       width: 100%;
@@ -35,15 +39,16 @@
     }
 
     .weatherDetails {
-      background-color: rgba(83, 89, 147, 0.9);
+      background-color: $primary-color;
       border-radius: 10px;
       margin-bottom: 10px;
       padding: 40px;
+      padding-left: 30px;
       width: 70%;
 
       .paragraph {
         .span {
-          color: rgb(255, 255, 255);
+          color: $fifth-color;
           font-weight: 600;
           text-transform: capitalize;
         }
@@ -59,7 +64,7 @@
       align-items: center;
       flex-direction: column;
       margin-top: 20px;
-      width: 40%;
+      width: 45%;
     }
   }
   @media (min-width: 1024px) {

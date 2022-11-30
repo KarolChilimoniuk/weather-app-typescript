@@ -1,4 +1,4 @@
-@import '../../App.scss';
+@import "../../App.scss";
 
 .form {
   align-items: center;
@@ -7,41 +7,47 @@
   justify-content: center;
   width: 100%;
 
-    .labelInputContainer {
-      padding-left: 10px;
-      text-align: center;
-      width: 100%;
+  .labelInputContainer {
+    padding-left: 10px;
+    text-align: center;
+    width: 100%;
 
-      @media(min-width: 1024px) {
-        flex-direction: row;
-        padding-left: 0;
-        width: 350px;
-      }
+    .formLabel {
+      color: $fifth-color;
     }
 
-    .formInput {
-      background-color: $third-color;
-      border: none;
-      border-radius: 10px;
-      color: #fff;
-      height: 30px;
-      margin: 10px;
-      width: 30%;
-
-      @media(min-width: 1024px) {
-        width: 200px;
-      }
+    @media (min-width: 1024px) {
+      flex-direction: row;
+      padding-left: 0;
+      width: 350px;
     }
+  }
 
-    .formInput::placeholder {
-      color: #fff;
+  .formInput {
+    background-color: $third-color;
+    border: none;
+    border-radius: 10px;
+    color: #fff;
+    height: 30px;
+    margin: 10px;
+    width: 30%;
+    z-index: 2;
+
+    @media (min-width: 1024px) {
+      width: 200px;
     }
+  }
 
-    #submit {
-      cursor: pointer;
-    }
+  .formInput::placeholder {
+    color: $secondary-color;
+    padding-left: 10px;
+  }
 
-  @media(min-width: 1024px) {
+  #submit {
+    cursor: pointer;
+  }
+
+  @media (min-width: 1024px) {
     flex-direction: row;
   }
 }
