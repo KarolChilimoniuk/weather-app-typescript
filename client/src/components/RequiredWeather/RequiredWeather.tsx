@@ -10,14 +10,19 @@ const RequiredWeather = (): JSX.Element => {
   const [cityName, newCityName] = useState<string>("");
   const [cityInfo, newCityInfo] = useState<any>("");
   const [forecastInfo, newForecastInfo] = useState<INextWeekForecast>(null);
+  const [isLoading, setLoading] = useState<boolean>(false);
 
   const fetchAppData = async (): Promise<void> => {
+    setLoading(true);
     if (cityName !== "") {
       const weatherData = await getReqCityData(cityName);
       if (!weatherData.message && weatherData !== null) {
         newCityInfo(weatherData.currentWeather);
         newForecastInfo(weatherData.forecastData);
-      } else {
+        setLoading(false);
+      }
+      if (weatherData.message) {
+        setLoading(false);
         alert(`${weatherData.message}`);
       }
     }
@@ -33,15 +38,16 @@ const RequiredWeather = (): JSX.Element => {
     <>
       <section className={styles.forecastContainer}>
         <Form appMethod={newCityName} cityName={cityName} />
-        {cityInfo === "" && (
+        {cityInfo === "" && isLoading === false && (
           <p className={styles.error} data-testid="writeACityTest">
             Write a city
           </p>
         )}
-        {cityInfo.cod !== 200 ? (
+        {isLoading === true && <h3 className={styles.loading}>... Loading</h3>}
+        {cityInfo.cod !== 200 && isLoading === false ? (
           <p className={styles.error}>{cityInfo.message}</p>
         ) : null}
-        {cityInfo.cod === 200 ? (
+        {cityInfo.cod === 200 && isLoading === false ? (
           <>
             <div className={styles.currentWeatherContainer}>
               <h2 className={styles.header}>Current weather</h2>
@@ -107,7 +113,7 @@ const RequiredWeather = (): JSX.Element => {
                 </p>
               </div>
             </div>
-            {forecastInfo !== null && (
+            {forecastInfo !== null && isLoading === false && (
               <DailyForecast forecastInfo={forecastInfo} />
             )}
           </>

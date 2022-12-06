@@ -15,10 +15,9 @@
     width: 100%;
 
     .background {
-      background-color: $secondary-color;
+      background-color: $fifth-color;
       clip-path: polygon(68% 0, 96% 25%, 58% 100%, 0 100%, 0 0);
       left: 0;
-      opacity: 0.8;
       position: absolute;
       top: 0;
       width: 100%;
@@ -88,11 +87,10 @@
     width: 50%;
 
     .background {
-      background-color: $secondary-color;
+      background-color: $fifth-color;
       clip-path: polygon(68% 0, 96% 25%, 58% 100%, 0 100%, 0 0);
       height: 100%;
       left: 0;
-      opacity: 0.8;
       position: absolute;
       top: 0;
       width: 100%;
