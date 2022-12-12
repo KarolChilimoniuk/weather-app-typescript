@@ -50,7 +50,7 @@ const Home = (): JSX.Element => {
                   <span className={styles.span}>
                     {userPositionWeather.name}
                   </span>
-                  ,{" "}
+                  <span className={styles.span}>{", "}</span>
                   <span className={styles.span}>
                     {userPositionWeather.sys.country}
                   </span>
