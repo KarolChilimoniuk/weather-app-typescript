@@ -1,7 +1,7 @@
 ***
 ### Introduction ⏩
-Hello World! This is my weather app built with React library + Typescript. Project contains client side and server side. I used create-react-app, axios, react-router-dom in client side. For server side I used express, cors, dotenv and node-fetch. 
-*****App migrated from Heroku to Render and may take 45-120 sec to spin up the server once loaded.*****
+Hello World! This is my weather app built with React library, Typescript and Node enviroment. Project contains client side and server side. Application is coded for learn purposes (cooperation between front-end and back-end).
+*****Server migrated from Heroku to Render and may take 45-120 sec to spin up the server once loaded.*****
 ***
 ### Technologies and Tools 🏗
 * create-react-app 
