@@ -36,7 +36,7 @@ const Home = (): JSX.Element => {
         {!isLoading && typeof userPosition === "boolean" && (
           <h3 className={styles.errorHeader}>
             I need your permission to get your geolocation data. It is needed to
-            fetch your local weather foreecast.
+            fetch your local weather forecast.
           </h3>
         )}
         {!isLoading && typeof userPosition !== "boolean" && (

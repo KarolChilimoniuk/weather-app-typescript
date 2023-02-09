@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import RequiredWeather from "./components/RequiredWeather/RequiredWeather";
 import Nav from "./components/Nav/Nav";
 import Footer from "./components/Footer/Footer";
+import Error404 from "./components/Error404.tsx/Error404";
 import { IUserPosition } from "./interfaces/interfaces";
 import "./App.scss";
 
@@ -41,6 +42,7 @@ const App = (): JSX.Element => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/requiredForecast" element={<RequiredWeather />} />
+          <Route path="*" element={<Error404 />} />
         </Routes>
         <Footer />
       </div>
