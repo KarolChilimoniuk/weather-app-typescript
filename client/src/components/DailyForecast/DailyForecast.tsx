@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import moment from "moment";
-import { INextWeekForecast } from "../../services/interfaces/interfaces";
+import { INextWeekForecast } from "../../interfaces/interfaces";
+import { DailyForecastProps } from "../../types/types";
 import styles from "./DailyForecast.module.scss";
 
-const DailyForecast = ({ forecastInfo }: any): JSX.Element => {
+const DailyForecast = ({ forecastInfo }: DailyForecastProps): JSX.Element => {
   const [nextWeek, setNextWeek] = useState<INextWeekForecast>(null);
 
   useEffect((): void => {
-    console.log(forecastInfo.daily);
     const next7Days = forecastInfo.daily.filter((day) =>
       moment(day.dt * 1000).format("MMMM Do YYYY") !==
       moment().format("MMMM Do YYYY")
@@ -25,7 +25,7 @@ const DailyForecast = ({ forecastInfo }: any): JSX.Element => {
         forecastInfo !== null &&
         nextWeek !== null
           ? nextWeek.nextWeekForecast.map((el, i, arr) => (
-              <div className={styles.dayForecast}>
+              <div className={styles.dayForecast} key={i}>
                 <h3 className={styles.secondHeader}>
                   {moment(el.dt * 1000).format("dddd")},
                 </h3>

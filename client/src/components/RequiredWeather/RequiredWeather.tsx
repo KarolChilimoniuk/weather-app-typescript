@@ -1,36 +1,20 @@
 import { useState, useEffect } from "react";
 import moment from "moment";
-import { INextWeekForecast } from "../../services/interfaces/interfaces";
+import { IForecast } from "../../interfaces/interfaces";
 import Form from "../Form/Form";
 import DailyForecast from "../DailyForecast/DailyForecast";
-import { getReqCityData } from "../../apiHandling/apiHandling";
+import { fetchAppData } from "../../utils/RequiredWeather";
 import styles from "./RequiredWeather.module.scss";
 
 const RequiredWeather = (): JSX.Element => {
   const [cityName, newCityName] = useState<string>("");
   const [cityInfo, newCityInfo] = useState<any>("");
-  const [forecastInfo, newForecastInfo] = useState<INextWeekForecast>(null);
+  const [forecastInfo, newForecastInfo] = useState<IForecast>(null);
   const [isLoading, setLoading] = useState<boolean>(false);
-
-  const fetchAppData = async (): Promise<void> => {
-    setLoading(true);
-    if (cityName !== "") {
-      const weatherData = await getReqCityData(cityName);
-      if (!weatherData.message && weatherData !== null) {
-        newCityInfo(weatherData.currentWeather);
-        newForecastInfo(weatherData.forecastData);
-        setLoading(false);
-      }
-      if (weatherData.message) {
-        setLoading(false);
-        alert(`${weatherData.message}`);
-      }
-    }
-  };
 
   useEffect((): void => {
     if (cityName !== "") {
-      fetchAppData();
+      fetchAppData(setLoading, newCityInfo, newForecastInfo, cityName);
     }
   }, [cityName]);
 

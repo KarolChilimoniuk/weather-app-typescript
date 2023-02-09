@@ -1,21 +1,16 @@
 import React, { useState } from "react";
+import { FormProps } from "../../types/types";
+import { submitHandler } from "../../utils/Form";
 import styles from "./Form.module.scss";
-
-type FormProps = {
-  appMethod: Function;
-  cityName: string;
-};
 
 const Form = ({ appMethod, cityName }: FormProps): JSX.Element => {
   const [userCity, changeCity] = useState<string>("");
 
-  const submitHandler = (e: React.SyntheticEvent): void => {
-    e.preventDefault();
-    appMethod(userCity);
-  };
-
   return (
-    <form onSubmit={submitHandler} className={styles.form}>
+    <form
+      onSubmit={(e) => submitHandler(e, appMethod, userCity)}
+      className={styles.form}
+    >
       <div className={styles.labelInputContainer}>
         <label className={styles.formLabel}>Check weather in:</label>
         <input

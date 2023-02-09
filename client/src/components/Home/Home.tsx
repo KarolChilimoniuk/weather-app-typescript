@@ -6,56 +6,56 @@ import {
   IUserPosition,
   ICurrentWeather,
   IForecast,
-} from "../../services/interfaces/interfaces";
-import { getLocWeatherData } from "../../apiHandling/apiHandling";
+} from "../../interfaces/interfaces";
+import { fetchAppData } from "../../utils/Home";
 import styles from "./Home.module.scss";
 
 const Home = (): JSX.Element => {
-  const userPosition: number | IUserPosition = useContext(PositionContext);
+  const userPosition: IUserPosition | boolean = useContext(PositionContext);
   const [userPositionWeather, newUserPositionWeather] =
     useState<ICurrentWeather>(null);
   const [forecastInfo, newForecastInfo] = useState<IForecast>(null);
   const [isLoading, setLoading] = useState<boolean>(true);
 
-  const fetchAppData = async (): Promise<void> => {
-    if (userPosition !== null) {
-      const localWeatherData = await getLocWeatherData(
-        userPosition.latitude,
-        userPosition.longitude
-      );
-      if (localWeatherData !== null) {
-        newUserPositionWeather(localWeatherData.currentWeather);
-        newForecastInfo(localWeatherData.forecastData);
-        setLoading(false);
-      }
-    }
-  };
-
   useEffect((): void => {
     if (userPosition !== null) {
-      fetchAppData();
+      fetchAppData(
+        userPosition,
+        newUserPositionWeather,
+        newForecastInfo,
+        setLoading
+      );
     }
+    typeof userPosition === "boolean" && setLoading(false);
   }, [userPosition]);
 
   return (
     <>
       <section className={styles.container}>
         {isLoading && <h3 className={styles.loading}>... Loading</h3>}
-        {isLoading === false && (
+        {!isLoading && typeof userPosition === "boolean" && (
+          <h3 className={styles.errorHeader}>
+            I need your permission to get your geolocation data. It is needed to
+            fetch your local weather foreecast.
+          </h3>
+        )}
+        {!isLoading && typeof userPosition !== "boolean" && (
           <>
             <div className={styles.currentWeather}>
               <h2 className={styles.header}>Your localization</h2>
               <div className={styles.weatherDetails}>
                 <p className={styles.paragraph}>
+                  You are in{" "}
                   <span className={styles.span}>
                     {userPositionWeather.name}
                   </span>
-                  <span className={styles.span}>{", "}</span>
+                  ,{" "}
                   <span className={styles.span}>
                     {userPositionWeather.sys.country}
                   </span>
                 </p>
                 <p className={styles.paragraph}>
+                  Day:{" "}
                   <span className={styles.span}>
                     {moment().format("dddd")}
                     {", "}
@@ -68,7 +68,7 @@ const Home = (): JSX.Element => {
                   alt={`weather icon`}
                 />
                 <p className={styles.paragraph}>
-                  Weather is:{" "}
+                  Current weather is:{" "}
                   <span className={styles.span}>
                     {userPositionWeather.weather[0].description}
                   </span>

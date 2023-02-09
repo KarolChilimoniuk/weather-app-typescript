@@ -1,6 +1,6 @@
 import { render, RenderResult } from "@testing-library/react";
-import { getLocWeatherData } from "../apiHandling/apiHandling";
-import { IUserPosition, IWeatherInfo } from "../services/interfaces/interfaces";
+import { getLocWeatherData } from "../services/api/apiHandling";
+import { IUserPosition, IWeatherInfo } from "../interfaces/interfaces";
 import Home from "../components/Home/Home";
 import DailyForecast from "../components/DailyForecast/DailyForecast";
 
