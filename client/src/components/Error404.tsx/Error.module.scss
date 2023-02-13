@@ -1,3 +1,6 @@
-.errorHeader {
-  padding: 20px;
+.errorContainer {
+  flex-grow: 1;
+  .errorHeader {
+    padding: 20px;
+  }
 }
