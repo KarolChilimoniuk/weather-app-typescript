@@ -7,12 +7,12 @@
   justify-content: center;
   width: 100%;
 
-  .labelInputContainer {
+  .labelInput__container {
     padding-left: 10px;
     text-align: center;
     width: 100%;
 
-    .formLabel {
+    .form__label {
       color: $fifth-color;
     }
 
@@ -23,7 +23,7 @@
     }
   }
 
-  .formInput {
+  .form__input {
     background-color: $third-color;
     border: none;
     border-radius: 10px;
@@ -38,7 +38,7 @@
     }
   }
 
-  .formInput::placeholder {
+  .form__input::placeholder {
     color: $secondary-color;
     padding-left: 10px;
   }

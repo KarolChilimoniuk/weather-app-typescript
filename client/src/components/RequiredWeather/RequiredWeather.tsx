@@ -20,82 +20,86 @@ const RequiredWeather = (): JSX.Element => {
 
   return (
     <>
-      <section className={styles.forecastContainer}>
+      <section className={styles.forecast__container}>
         <Form appMethod={newCityName} cityName={cityName} />
         {cityInfo === "" && isLoading === false && (
-          <p className={styles.error} data-testid="writeACityTest">
+          <p className={styles.forecast__error} data-testid="writeACityTest">
             Write a city
           </p>
         )}
-        {isLoading === true && <h3 className={styles.loading}>... Loading</h3>}
+        {isLoading === true && (
+          <h3 className={styles.forecast__loading}>... Loading</h3>
+        )}
         {cityInfo.cod !== 200 && isLoading === false ? (
-          <p className={styles.error}>{cityInfo.message}</p>
+          <p className={styles.forecast__error}>{cityInfo.message}</p>
         ) : null}
         {cityInfo.cod === 200 && isLoading === false ? (
           <>
-            <div className={styles.currentWeatherContainer}>
-              <h2 className={styles.header}>Current weather</h2>
-              <div className={styles.todayWeather}>
-                <h3 className={styles.paragraph}>
+            <div className={styles.forecast__currentWeather_container}>
+              <h2 className={styles.currentWeather__header}>Current weather</h2>
+              <div className={styles.currentWeather__todayWeather}>
+                <h3 className={styles.currentWeather__paragraph}>
                   {cityInfo.name}
                   <span>, </span>
                   {cityInfo.sys.country}
                 </h3>
-                <p className={styles.paragraph}>
-                  <span className={styles.span}>
+                <p className={styles.currentWeather__paragraph}>
+                  <span className={styles.currentWeather__span}>
                     {moment().format("dddd")}
                     {", "}
                     {moment().format("MMMM Do YYYY")}
                   </span>
                 </p>
                 <img
-                  className={styles.icon}
+                  className={styles.currentWeather__icon}
                   src={`http://openweathermap.org/img/wn/${cityInfo.weather[0].icon}@2x.png`}
                   alt={`weather icon`}
                 />
-                <p className={styles.paragraph}>
+                <p className={styles.currentWeather__paragraph}>
                   Weather:{" "}
-                  <span className={styles.span}>
+                  <span className={styles.currentWeather__span}>
                     {cityInfo.weather[0].description}
                   </span>
                 </p>
-                <p className={styles.paragraph}>
+                <p className={styles.currentWeather__paragraph}>
                   Sunrise:{" "}
-                  <span className={styles.span}>
+                  <span className={styles.currentWeather__span}>
                     {moment(cityInfo.sys.sunrise * 1000).calendar()}
                   </span>
                 </p>
-                <p className={styles.paragraph}>
+                <p className={styles.currentWeather__paragraph}>
                   Sunset:{" "}
-                  <span className={styles.span}>
+                  <span className={styles.currentWeather__span}>
                     {moment(cityInfo.sys.sunset * 1000).calendar()}
                   </span>
                 </p>
-                <p className={styles.paragraph}>
+                <p className={styles.currentWeather__paragraph}>
                   Temperature:{" "}
-                  <span className={styles.span}>{cityInfo.main.temp} °C</span>
+                  <span className={styles.currentWeather__span}>
+                    {cityInfo.main.temp} °C
+                  </span>
                 </p>
-                <p className={styles.paragraph}>
+                <p className={styles.currentWeather__paragraph}>
                   Feels like:{" "}
-                  <span className={styles.span}>
+                  <span className={styles.currentWeather__span}>
                     {cityInfo.main.feels_like} °C
                   </span>
                 </p>
-                <p className={styles.paragraph}>
+                <p className={styles.currentWeather__paragraph}>
                   Pressure:{" "}
-                  <span className={styles.span}>
+                  <span className={styles.currentWeather__span}>
                     {cityInfo.main.pressure} hPa
                   </span>
                 </p>
-                <p className={styles.paragraph}>
+                <p className={styles.currentWeather__paragraph}>
                   Humidity:{" "}
-                  <span className={styles.span}>
+                  <span className={styles.currentWeather__span}>
                     {cityInfo.main.humidity} %
                   </span>
                 </p>
-                <p className={styles.paragraph}>
+                <p className={styles.currentWeather__paragraph}>
                   Wind speed:{" "}
-                  <span className={styles.span}>
+                  <span className={styles.currentWeather__span}>
                     {cityInfo.wind.speed} km/h
                   </span>
                 </p>

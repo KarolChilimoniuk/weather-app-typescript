@@ -1,20 +1,20 @@
 @import "../../App.scss";
 
-.navContainer {
+.nav__container {
   height: 10vh;
   margin-bottom: 10px;
   position: relative;
   width: 100%;
   z-index: 4;
 
-  .desktopNavigation {
+  .nav__desktopNavigation {
     display: flex;
     flex-direction: column;
     height: 100%;
     justify-content: center;
     width: 100%;
 
-    .background {
+    .desktopNavigation__background {
       background-color: $seventh-color;
       clip-path: polygon(68% 0, 96% 25%, 58% 100%, 0 100%, 0 0);
       left: 0;
@@ -29,7 +29,7 @@
       }
     }
 
-    .navigationList {
+    .desktopNavigation__list {
       align-content: center;
       cursor: pointer;
       display: flex;
@@ -43,7 +43,7 @@
         justify-content: start;
       }
 
-      .navigationElement {
+      .desktopNavigation__element {
         display: flex;
         justify-content: start;
         margin-right: 20px;
@@ -54,14 +54,14 @@
           justify-content: center;
         }
 
-        .navigationLink {
+        .desktopNavigation__link {
           color: $sixth-color;
           margin: 10px;
           text-decoration: none;
           transition: font-size 0.2s 0.1s;
         }
 
-        .navigationLink:hover {
+        .desktopNavigation__link:hover {
           font-size: 1.2em;
         }
       }
@@ -76,7 +76,7 @@
     }
   }
 
-  .mobileNavigation {
+  .nav__mobileNavigation {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -86,7 +86,7 @@
     transition: left 0.4s ease-out 0.1s;
     width: 50%;
 
-    .background {
+    .mobileNavigation__background {
       background-color: $eighth-color;
       clip-path: polygon(68% 0, 96% 25%, 58% 100%, 0 100%, 0 0);
       height: 100%;
@@ -97,7 +97,7 @@
       z-index: 1;
     }
 
-    .navigationList {
+    .mobileNavigation__list {
       align-content: center;
       cursor: pointer;
       display: flex;
@@ -105,13 +105,13 @@
       justify-content: center;
       list-style: none;
 
-      .navigationElement {
+      .mobileNavigation__element {
         display: flex;
         justify-content: start;
         margin-right: 20px;
         z-index: 1;
 
-        .navigationLink {
+        .mobileNavigation__link {
           color: #000;
           margin-top: 10px;
           text-decoration: none;

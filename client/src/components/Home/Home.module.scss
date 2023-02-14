@@ -1,6 +1,6 @@
 @import "../../App.scss";
 
-.container {
+.home__container {
   align-items: center;
   border-radius: 10px;
   display: flex;
@@ -10,27 +10,27 @@
   width: 100vw;
   z-index: 2;
 
-  .loading {
+  .home__loading {
     margin-left: 30px;
     font-size: 1.5rem;
   }
 
-  .errorHeader {
+  .home__error_header {
     padding: 20px;
   }
 
-  .currentWeather {
+  .home__currentWeather {
     align-items: center;
     display: flex;
     flex-direction: column;
     min-width: 320px;
     width: 100%;
 
-    .icon {
+    .home__icon {
       width: 80px;
     }
 
-    .header {
+    .home__header {
       color: $fifth-color;
       display: inline-block;
       text-align: center;
@@ -42,7 +42,7 @@
       }
     }
 
-    .weatherDetails {
+    .home__weatherDetails {
       background-color: $primary-color;
       border-radius: 10px;
       margin-bottom: 10px;
@@ -50,8 +50,8 @@
       padding-left: 30px;
       width: 70%;
 
-      .paragraph {
-        .span {
+      .weatherDetails__paragraph {
+        .weatherDetails__span {
           color: $fifth-color;
           font-weight: 600;
           text-transform: capitalize;

@@ -1,6 +1,6 @@
 @import "../../App.scss";
 
-.dailyForecastContainer {
+.dailyForecast__container {
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@
   min-width: 311px;
   width: 100%;
 
-  .header {
+  .dailyForecast__header {
     color: $fifth-color;
     text-align: center;
 
@@ -19,13 +19,13 @@
     }
   }
 
-  .weekDailyForecast {
+  .dailyForecast__weekDailyForecast {
     align-items: center;
     display: flex;
     flex-direction: column;
     width: 100%;
 
-    .dayForecast {
+    .weekDailyForecast__dayForecast {
       background-color: $primary-color;
       border-radius: 10px;
       min-height: 600px;
@@ -37,11 +37,11 @@
       padding-top: 20px;
       width: 75%;
 
-      .secondHeader {
+      .weekDailyForecast__secondHeader {
         margin: 0;
       }
 
-      .icon {
+      .weekDailyForecast__icon {
         width: 80px;
       }
 
@@ -59,7 +59,7 @@
       }
     }
 
-    .paragraph {
+    .dailyForecast__paragraph {
       .span {
         color: $fifth-color;
         font-weight: 600;

@@ -15,18 +15,21 @@ const Nav = (): JSX.Element => {
   };
 
   return (
-    <div className={styles.navContainer}>
+    <div className={styles.nav__container}>
       <Burger mobileHandler={mobileNavHandler} />
-      <nav className={styles.desktopNavigation}>
-        <div className={styles.background}></div>
-        <ul className={styles.navigationList}>
-          <li className={styles.navigationElement}>
-            <NavLink to="/" className={styles.navigationLink}>
+      <nav className={styles.nav__desktopNavigation}>
+        <div className={styles.desktopNavigation__background}></div>
+        <ul className={styles.desktopNavigation__list}>
+          <li className={styles.desktopNavigation__element}>
+            <NavLink to="/" className={styles.desktopNavigation__link}>
               Home
             </NavLink>
           </li>
-          <li className={styles.navigationElement}>
-            <NavLink to="/requiredForecast" className={styles.navigationLink}>
+          <li className={styles.desktopNavigation__element}>
+            <NavLink
+              to="/requiredForecast"
+              className={styles.desktopNavigation__link}
+            >
               Forecast
             </NavLink>
           </li>
@@ -35,19 +38,22 @@ const Nav = (): JSX.Element => {
       <nav
         className={
           mobileNavVisibility === false
-            ? styles.mobileNavigation
-            : `${styles.mobileNavigation} ${styles.visible}`
+            ? styles.nav__mobileNavigation
+            : `${styles.nav__mobileNavigation} ${styles.visible}`
         }
       >
-        <div className={styles.background}></div>
-        <ul className={styles.navigationList}>
-          <li className={styles.navigationElement}>
-            <NavLink to="/" className={styles.navigationLink}>
+        <div className={styles.mobileNavigation__background}></div>
+        <ul className={styles.mobileNavigation__list}>
+          <li className={styles.mobileNavigation__element}>
+            <NavLink to="/" className={styles.mobileNavigation__link}>
               Home
             </NavLink>
           </li>
-          <li className={styles.navigationElement}>
-            <NavLink to="/requiredForecast" className={styles.navigationLink}>
+          <li className={styles.mobileNavigation__element}>
+            <NavLink
+              to="/requiredForecast"
+              className={styles.mobileNavigation__link}
+            >
               Forecast
             </NavLink>
           </li>

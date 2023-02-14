@@ -12,21 +12,21 @@ const Form = ({ appMethod, cityName }: FormProps): JSX.Element => {
       className={styles.form}
     >
       <div className={styles.labelInputContainer}>
-        <label className={styles.formLabel}>Check weather in:</label>
+        <label className={styles.form__label}>Check weather in:</label>
         <input
           name="weather"
           type="text"
           id="weather"
           placeholder="city"
           onChange={(e) => changeCity(e.target.value)}
-          className={styles.formInput}
+          className={styles.form__input}
         />
       </div>
       <input
         id={styles.submit}
         type="submit"
         value="check"
-        className={styles.formInput}
+        className={styles.form__input}
       />
     </form>
   );
