@@ -3,6 +3,7 @@ export const submitHandler = (
   appMethod: Function,
   userCity: string
 ): void => {
+  userCity === "" && alert("Write city name");
   e.preventDefault();
   appMethod(userCity);
 };
