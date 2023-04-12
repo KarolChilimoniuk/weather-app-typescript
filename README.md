@@ -1,7 +1,7 @@
-***
+
 ### Introduction ⏩
-Hello World! This is my weather app built with React library, Typescript and Node enviroment. Project contains client side and server side. Application is coded for learn purposes (cooperation between front-end and back-end).
-*****Server migrated from Heroku to Render and may take 45-120 sec to spin up the server once loaded.*****
+Hello World! This is my weather app built with React library, Typescript and Node.js environment. Project based on Openweather API and contains client side and server side. Frontend is deployed on Netlify, backend on Render.com. App contains Jest & React-testing-library unit tests.
+<u>*****IMPORTANT: Server migrated from Heroku to Render and may take 45-120 sec to spin up the server once loaded.*****<u>
 ***
 ### Technologies and Tools 🏗
 * create-react-app 
