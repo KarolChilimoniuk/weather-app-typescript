@@ -15,5 +15,5 @@ Hello World! This is my weather app built with React library, Typescript and Nod
 * Netlify (for frontend deployment)
 * Visual Studio Code
 ***
-### How does it look? 👀
-[Check my app here](https://forecast-weather-app-by-charlie.netlify.app/)
+### How does it look? 👀 <u>[Check my app here](https://forecast-weather-app-by-charlie.netlify.app/)<u>
+![screenshot](https://github.com/KarolChilimoniuk/weather-app-typescript/blob/main/client/src/img/forecastScreen1.png)
